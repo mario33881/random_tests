@@ -57,7 +57,7 @@ Passaggi:
 
 ## Descrizione
 Per leggere la documentazione dettagliata delle funzioni,
-generata da sphinx, [cliccare qui]().
+generata da sphinx, [cliccare qui](https://mario33881.github.io/random_tests/html/random_tests/random_tests.html).
 > Nota: per generare la documentazione eseguire il comando ```make html``` (richiede sphinx installato)
 
 RANDOM TESTS: Genera la lista degli studenti per le interrogazioni.
@@ -97,7 +97,7 @@ dalla variabile ```persone_per_gruppo```.
 Random_tests e' testato utilizzando la libreria unittest.
 
 Per la documentazione dei test:
-* test di random_tests.py: [cliccare qui]()
+* test di random_tests.py: [cliccare qui](https://mario33881.github.io/random_tests/html/test_random_tests/test_random_tests.html)
 
 [Torna all'indice](#indice)
 
