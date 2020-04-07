@@ -16,7 +16,8 @@ import os
 import sys
 # inserisci in path la cartella superiore
 # per importare random_tests
-sys.path.insert(0, os.path.abspath('..'))
+tests_path = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(tests_path, '..'))
 
 from random_tests import random_tests as rt
 
