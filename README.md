@@ -30,6 +30,11 @@ Per utilizzare lo script ci sono due metodi:
 * lista degli studenti su file
 * lista di studenti nel codice
 
+> Nota: se si ha installata la versione python 3.5 o precedente
+> occorre installare la libreria ```python2-secrets``` eseguendo
+> il comando ```pip install requirements.txt``` (file nella cartella ```randomtests```)
+> o il comando ```pip install python2-secrets```
+
 ### Studenti su file
 Passaggi:
 1. Aprire lo script random_tests.py con un editor di testo
@@ -103,6 +108,7 @@ Per la documentazione dei test:
 
 ## Requisiti
 * python 3
+* libreria python2-secrets (per tutte le versioni python precedenti alla 3.6, quindi 3.5, 3.4,...)
 
 [Torna all'indice](#indice)
 
