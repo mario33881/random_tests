@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>random tests documentation &#8212; random_tests 01_01 documentazione</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="prev" title="Test Random Tests documentation" href="../test_random_tests/test_random_tests.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-random_tests.random_tests">
+<span id="random-tests-documentation"></span><h1>random tests documentation<a class="headerlink" href="#module-random_tests.random_tests" title="Link a questa intestazione">¶</a></h1>
+<p>RANDOM_TESTS</p>
+<p>Genera la lista degli studenti per le interrogazioni.</p>
+<p>Se <code class="docutils literal notranslate"><span class="pre">fromfile</span></code> e” <code class="docutils literal notranslate"><span class="pre">True</span></code> viene usata la funzione
+<a class="reference internal" href="#random_tests.random_tests.extract_students" title="random_tests.random_tests.extract_students"><code class="xref py py-func docutils literal notranslate"><span class="pre">extract_students()</span></code></a> per creare il vettore con gli studenti,
+altrimenti viene usato direttamente il vettore <code class="docutils literal notranslate"><span class="pre">studenti</span></code>.</p>
+<p>Il vettore <code class="docutils literal notranslate"><span class="pre">volontari</span></code> permette di aggiungere eventuali
+volontari a inizio lista delle interrogazioni.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>l’ordine ha importanza, il primo studente nel vettore
+e” il primo interrogato</p>
+</div>
+<p>Poi viene usata la funzione <a class="reference internal" href="#random_tests.random_tests.gen_rnd_list" title="random_tests.random_tests.gen_rnd_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">gen_rnd_list()</span></code></a> per ottenere
+una lista casuale degli interrogati.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Pesca un interrogato casuale continuamente finche” non li ha
+pescati tutti</p>
+</div>
+<p>La lista casuale viene usata per visualizzare
+tanti studenti per gruppo quanti sono specificati
+dalla variabile <code class="docutils literal notranslate"><span class="pre">persone_per_gruppo</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>il risultato e” «pipe-friendly», e” possibile
+utilizzare il pipe per mandare l’output su file da linea di comando</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Per assicurare l’unicita” degli studenti (non possono essere inseriti doppi)
+la funzione <a class="reference internal" href="#random_tests.random_tests.gen_rnd_list" title="random_tests.random_tests.gen_rnd_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">gen_rnd_list()</span></code></a> usa la funzione <a class="reference internal" href="#random_tests.random_tests.check_unique" title="random_tests.random_tests.check_unique"><code class="xref py py-func docutils literal notranslate"><span class="pre">check_unique()</span></code></a>.</p>
+</div>
+<dl class="exception">
+<dt id="random_tests.random_tests.NoStudents">
+<em class="property">exception </em><code class="sig-prename descclassname">random_tests.random_tests.</code><code class="sig-name descname">NoStudents</code><a class="headerlink" href="#random_tests.random_tests.NoStudents" title="Link a questa definizione">¶</a></dt>
+<dd><p>Errore lanciato quando vettore studenti e” vuoto.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="random_tests.random_tests.NonUniqueStudentsError">
+<em class="property">exception </em><code class="sig-prename descclassname">random_tests.random_tests.</code><code class="sig-name descname">NonUniqueStudentsError</code><a class="headerlink" href="#random_tests.random_tests.NonUniqueStudentsError" title="Link a questa definizione">¶</a></dt>
+<dd><p>Errore lanciato quando vettore studenti contiene duplicati.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="random_tests.random_tests.NonUniqueVolunteersError">
+<em class="property">exception </em><code class="sig-prename descclassname">random_tests.random_tests.</code><code class="sig-name descname">NonUniqueVolunteersError</code><a class="headerlink" href="#random_tests.random_tests.NonUniqueVolunteersError" title="Link a questa definizione">¶</a></dt>
+<dd><p>Errore lanciato quando vettore volontari contiene duplicati.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="random_tests.random_tests.check_unique">
+<code class="sig-prename descclassname">random_tests.random_tests.</code><code class="sig-name descname">check_unique</code><span class="sig-paren">(</span><em class="sig-param">t_vector</em><span class="sig-paren">)</span><a class="headerlink" href="#random_tests.random_tests.check_unique" title="Link a questa definizione">¶</a></dt>
+<dd><p>Indica se t_vector ha valori unici.</p>
+<p>Un loop scorre gli elementi:
+se un elemento e” presente piu”
+di una volta nel vettore il check
+e” negativo.</p>
+<p>Se finisce il loop il check e” positivo.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametri</dt>
+<dd class="field-odd"><p><strong>t_vector</strong> (<em>list</em>) – vettore di elementi</p>
+</dd>
+<dt class="field-even">Return check</dt>
+<dd class="field-even"><p>booleano, se True gli elementi sono unici</p>
+</dd>
+<dt class="field-odd">Tipo di ritorno</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="random_tests.random_tests.extract_students">
+<code class="sig-prename descclassname">random_tests.random_tests.</code><code class="sig-name descname">extract_students</code><span class="sig-paren">(</span><em class="sig-param">t_filepath</em><span class="sig-paren">)</span><a class="headerlink" href="#random_tests.random_tests.extract_students" title="Link a questa definizione">¶</a></dt>
+<dd><p>Estrae gli studenti dal file t_filepath.</p>
+<p>Apre il file t_filepath in modalita” lettura,
+scorre il file e recupera gli studenti.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>gli studenti sono uno per riga</p>
+</div>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parametri</dt>
+<dd class="field-odd"><p><strong>t_filepath</strong> (<em>str</em>) – stringa, percorso file studenti</p>
+</dd>
+<dt class="field-even">Return studenti_infile</dt>
+<dd class="field-even"><p>vettore con studenti del file</p>
+</dd>
+<dt class="field-odd">Tipo di ritorno</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="random_tests.random_tests.gen_rnd_list">
+<code class="sig-prename descclassname">random_tests.random_tests.</code><code class="sig-name descname">gen_rnd_list</code><span class="sig-paren">(</span><em class="sig-param">t_vstudenti</em>, <em class="sig-param">t_volontari=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#random_tests.random_tests.gen_rnd_list" title="Link a questa definizione">¶</a></dt>
+<dd><p>Genera lista di interrogati casuali.</p>
+<p>La funzione salva la lista dei volontari
+nella lista degli interrogati,
+poi, all’interno di un loop, viene scelto
+casualmente un elemento di t_vstudenti.</p>
+<p>Se questo elemento non e” gia” nella lista
+degli interrogati (non e” stato pescato e non e” volontario)
+allora l’elemento viene inserito nella lista.</p>
+<p>Nel momento in cui il numero di elementi nella
+lista degli interrogati e” uguale al numero
+di studenti del vettore passato alla funzione
+sono uguali il loop termina.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>per assicurarsi di non falsare la lista degli interrogati
+verra” controllata l’unicita” degli elementi in t_vstudenti
+e in t_volontari attraverso la funzione check_unique()</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parametri</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t_vstudenti</strong> (<em>list</em>) – vettore con studenti</p></li>
+<li><p><strong>t_volontari</strong> (<em>list</em>) – vettore studenti volontari</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return lista_interrogati</dt>
+<dd class="field-even"><p>vettore con studenti da interrogare</p>
+</dd>
+<dt class="field-odd">Tipo di ritorno</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="random_tests.random_tests.remove_blanks">
+<code class="sig-prename descclassname">random_tests.random_tests.</code><code class="sig-name descname">remove_blanks</code><span class="sig-paren">(</span><em class="sig-param">t_vector</em><span class="sig-paren">)</span><a class="headerlink" href="#random_tests.random_tests.remove_blanks" title="Link a questa definizione">¶</a></dt>
+<dd><p>Restituisce il vettore &lt;t_vector&gt; senza stringhe vuote/nulle.</p>
+<p>La funzione scorre il vettore e controlla che ogni elemento
+non sia una stringa nulla («») o vuota (»    «)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametri</dt>
+<dd class="field-odd"><p><strong>t_vector</strong> (<em>list</em>) – vettore di stringhe</p>
+</dd>
+<dt class="field-even">Return noblanks_vector</dt>
+<dd class="field-even"><p>vettore t_vector senza stringhe vuote/nulle</p>
+</dd>
+<dt class="field-odd">Tipo di ritorno</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">random_tests</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigazione</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../test_random_tests/test_random_tests.html">Test Random Tests documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">random tests documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../test_random_tests/test_random_tests.html" title="capitolo precedente">Test Random Tests documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Ricerca veloce</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Vai" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Zenaro Stefano.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/random_tests/random_tests.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <title>Test Random Tests documentation &#8212; random_tests 01_01 documentazione</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Indice" href="../genindex.html" />
+    <link rel="search" title="Cerca" href="../search.html" />
+    <link rel="next" title="random tests documentation" href="../random_tests/random_tests.html" />
+    <link rel="prev" title="Welcome to random_tests’s documentation!" href="../index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-tests.test_random_tests">
+<span id="test-random-tests-documentation"></span><h1>Test Random Tests documentation<a class="headerlink" href="#module-tests.test_random_tests" title="Link a questa intestazione">¶</a></h1>
+<p>TEST_RANDOM_TESTS: test dello script <a class="reference internal" href="../random_tests/random_tests.html#module-random_tests.random_tests" title="random_tests.random_tests"><code class="xref py py-mod docutils literal notranslate"><span class="pre">random_tests.random_tests</span></code></a>.py</p>
+<p>Unittest esegue i metodi di <a class="reference internal" href="#tests.test_random_tests.TestRandomTests" title="tests.test_random_tests.TestRandomTests"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestRandomTests()</span></code></a>:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#tests.test_random_tests.TestRandomTests.test_production_mode" title="tests.test_random_tests.TestRandomTests.test_production_mode"><code class="xref py py-meth docutils literal notranslate"><span class="pre">test_production_mode()</span></code></a>: verifica se lo script e” pronto alla produzione</p></li>
+<li><p><a class="reference internal" href="#tests.test_random_tests.TestRandomTests.test_check_unique" title="tests.test_random_tests.TestRandomTests.test_check_unique"><code class="xref py py-meth docutils literal notranslate"><span class="pre">test_check_unique()</span></code></a>: test della funzione check_unique()</p></li>
+<li><p><a class="reference internal" href="#tests.test_random_tests.TestRandomTests.test_gen_rnd_list" title="tests.test_random_tests.TestRandomTests.test_gen_rnd_list"><code class="xref py py-meth docutils literal notranslate"><span class="pre">test_gen_rnd_list()</span></code></a>: test della funzione gen_rnd_list()</p></li>
+</ul>
+<dl class="class">
+<dt id="tests.test_random_tests.TestRandomTests">
+<em class="property">class </em><code class="sig-prename descclassname">tests.test_random_tests.</code><code class="sig-name descname">TestRandomTests</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_random_tests.TestRandomTests" title="Link a questa definizione">¶</a></dt>
+<dd><dl class="method">
+<dt id="tests.test_random_tests.TestRandomTests.test_check_unique">
+<code class="sig-name descname">test_check_unique</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_random_tests.TestRandomTests.test_check_unique" title="Link a questa definizione">¶</a></dt>
+<dd><p>Test funzione <a class="reference internal" href="../random_tests/random_tests.html#random_tests.random_tests.check_unique" title="random_tests.random_tests.check_unique"><code class="xref py py-func docutils literal notranslate"><span class="pre">random_tests.random_tests.check_unique()</span></code></a>: controlla unicita” elementi in una lista.</p>
+<p>Il test fallisce se uno dei casi in unique_true_test_cases e
+unique_false_test_casese da un risultato inaspettato.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_random_tests.TestRandomTests.test_gen_rnd_list">
+<code class="sig-name descname">test_gen_rnd_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_random_tests.TestRandomTests.test_gen_rnd_list" title="Link a questa definizione">¶</a></dt>
+<dd><p>Test funzione <a class="reference internal" href="../random_tests/random_tests.html#random_tests.random_tests.gen_rnd_list" title="random_tests.random_tests.gen_rnd_list"><code class="xref py py-func docutils literal notranslate"><span class="pre">random_tests.random_tests.gen_rnd_list()</span></code></a>: genera lista casuale da un’altra lista.</p>
+<p>gen_rnd_list(t_vstudenti, t_volontari=[]):</p>
+<ul class="simple">
+<li><p>t_vstudenti: lista con elementi da restituire in ordine casuale</p></li>
+<li><p>t_volontari: lista elementi da posizionare primi nell’output.</p></li>
+</ul>
+<p>Il test non ha successo se:</p>
+<ul class="simple">
+<li><p>la funzione NON da errore se gli studenti sono duplicati</p></li>
+<li><p>la funzione NON da errore se i volontari sono duplicati</p></li>
+<li><p>la funzione restituisce piu” del 50% delle volte risultati uguali di fila</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_random_tests.TestRandomTests.test_production_mode">
+<code class="sig-name descname">test_production_mode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_random_tests.TestRandomTests.test_production_mode" title="Link a questa definizione">¶</a></dt>
+<dd><p>Assicura la modalita” di produzione.</p>
+<p>Il test fallisce se:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">boold</span> <span class="pre">=</span> <span class="pre">True</span></code> (messaggi debug attivi),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fromfile</span> <span class="pre">=</span> <span class="pre">True</span></code> (di default il programma usa la lista <code class="docutils literal notranslate"><span class="pre">studenti</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">file_studenti</span> <span class="pre">!=</span> <span class="pre">&quot;example.txt&quot;</span></code> (default modificato)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">studenti</span> <span class="pre">!=</span> <span class="pre">[]</span></code> (di default la lista e” vuota)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">volontari</span> <span class="pre">!=</span> <span class="pre">[]</span></code> (di default la lista e” vuota)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="tests.test_random_tests.TestRandomTests.test_remove_blanks">
+<code class="sig-name descname">test_remove_blanks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#tests.test_random_tests.TestRandomTests.test_remove_blanks" title="Link a questa definizione">¶</a></dt>
+<dd><p>Test funzione <a class="reference internal" href="../random_tests/random_tests.html#random_tests.random_tests.remove_blanks" title="random_tests.random_tests.remove_blanks"><code class="xref py py-func docutils literal notranslate"><span class="pre">random_tests.random_tests.remove_blanks()</span></code></a>: restituisce vettore passato senza stringhe vuote/nulle.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">random_tests</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigazione</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Test Random Tests documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../random_tests/random_tests.html">random tests documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../index.html" title="capitolo precedente">Welcome to random_tests’s documentation!</a></li>
+      <li>Next: <a href="../random_tests/random_tests.html" title="capitolo successivo">random tests documentation</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Ricerca veloce</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Vai" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Zenaro Stefano.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/test_random_tests/test_random_tests.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
