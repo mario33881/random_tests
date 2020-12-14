@@ -3,3 +3,5 @@ tests/_trial_temp/*
 
 random_tests/__pycache__/*
 tests/__pycache__/*
+
+.vscode
